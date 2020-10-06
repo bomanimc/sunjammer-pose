@@ -61,6 +61,5 @@ const openOSC = () => {
 openOSC();
 
 ipcMain.on("oscSend", (event, args) => {
-  console.log(args);
   osc.send(new OSC.Message("/poses", JSON.stringify(args)));
 });

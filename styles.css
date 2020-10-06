@@ -1,0 +1,58 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  color: black;
+}
+
+body {
+  display: flex;
+  flex-flow: column;
+  background: #ecf0f1;
+}
+
+main { 
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.training-context {
+  display: flex;
+  justify-content: center;
+}
+
+#canvas {
+  width: 400px;
+  border: 2px solid #bdc3c7;
+  border-radius: 0.5rem;
+  box-shadow: 3px 3px 3px #bdc3c7;
+}
+
+.label-container {
+  margin-left: 1rem;
+  background: white;
+  border: 2px solid #bdc3c7;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 3px 3px 3px #bdc3c7;
+}
+
+.section-title {
+  font-weight: bold;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.system-context {
+  font-style: italic;
+}
