@@ -7,6 +7,8 @@
     "start": "electron .",
     "pack": "electron-builder --dir",
     "dist": "electron-builder",
+    "build:win": "electron-builder build --win",
+    "build:mac": "electron-builder build --mac",
     "postinstall": "electron-builder install-app-deps",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
