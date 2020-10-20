@@ -20,11 +20,12 @@ window.addEventListener('DOMContentLoaded', () => {
 // the ipcRenderer without exposing the entire object
 contextBridge.exposeInMainWorld(
   "api", {
-    send: (channel, data) => {
+    send: (channel, ...args) => {
       // whitelist channels
+      console.log(args);
       const validChannels = ["oscSend"];
       if (validChannels.includes(channel)) {
-          ipcRenderer.send(channel, data);
+          ipcRenderer.send(channel, ...args);
       }
     },
     receive: (channel, func) => {

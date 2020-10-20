@@ -60,6 +60,8 @@ const openOSC = () => {
 
 openOSC();
 
-ipcMain.on("oscSend", (event, args) => {
-  osc.send(new OSC.Message("/poses", JSON.stringify(args)));
+ipcMain.on("oscSend", (event, ...args) => {
+  const [address, probability] = args;
+  console.log(`/poses/${address}, ${probability}`);
+  osc.send(new OSC.Message(`/poses/${address}`, probability));
 });
