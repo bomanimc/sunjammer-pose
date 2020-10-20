@@ -5,4 +5,14 @@
 // selectively enable features needed in the rendering
 // process.
 
-const sendOSCMessage = (data) => window.api.send("oscSend", data);
+const sendOSCMessage = (address, data) => window.api.send("oscSend", address, data);
+
+const cleanClassName = (className) => className.toLowerCase().split(' ').join('_');
+
+const sendModelPreditions = (predictions) => {
+  predictions.map(prediction => {
+    const {className, probability} = prediction;
+    const cleanedClassName = cleanClassName(className);
+    sendOSCMessage(cleanedClassName, probability);
+  });
+};

@@ -85,7 +85,7 @@
         }
 
         const sortedPredictions = prediction.sort((a, b) => b.probability - a.probability);
-        sendOSCMessage(sortedPredictions[0].className)
+        sendModelPreditions(sortedPredictions);
 
         // finally draw the poses
         drawPose(pose);
